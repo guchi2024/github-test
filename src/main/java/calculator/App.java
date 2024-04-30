@@ -4,10 +4,14 @@ import java.util.Scanner;
 
 public class App {
     public static void main(String[] args) {
-        Scanner sc = new Scanner(System.in);
-        boolean ex = false;
+        /* 연산의 결과를 저장할 수 있도록 적합한 타입의 배열을 생성합니다. */
+        /* 연산의 결과가 저장된 배열의 마지막 index를 저장하는 변수를 선언 */
+        int[] intArray = new int[10];
+        int d = 0;
 
+        Scanner sc = new Scanner(System.in);
         String str;
+
         do {
             System.out.print("첫 번째 숫자를 입력하세요: ");
             // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
@@ -56,21 +60,20 @@ public class App {
             }
             System.out.println("결과: " + result);
 
+            /* 연산의 결과를 배열에 저장합니다. */
+            intArray[d] = result;
+            /* index를 증가 시킵니다. */
+            d++;
+
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             sc.nextLine();
             str = sc.nextLine();
 
         } while (!str.equals("exit"));
+
         System.out.println("프로그램을 종료합니다");
-
-
-//        System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
-        /* exit을 입력 받으면 반복 종료 */
-//        while (!str.equals("exit")) {
-//            System.out.println("문자열 입력 :");
-//            str = sc.next();
     }
-    }
+}
 
 
 
