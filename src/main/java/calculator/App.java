@@ -6,7 +6,7 @@ public class App {
     public static void main(String[] args) {
         /* 연산의 결과를 저장할 수 있도록 적합한 타입의 배열을 생성합니다. */
         /* 연산의 결과가 저장된 배열의 마지막 index를 저장하는 변수를 선언 */
-        int[] intArray = new int[10];
+        int[] intArray = new int[4];
         int d = 0;
 
         Scanner sc = new Scanner(System.in);
@@ -62,6 +62,13 @@ public class App {
 
             /* 연산의 결과를 배열에 저장합니다. */
             intArray[d] = result;
+            /* 위 요구사항에 맞게 구현 */
+            if(d == 3) {
+                int delIndex = 0;
+                for (int i = delIndex; i < intArray.length - 1; i++) {
+                    intArray[i] = intArray[i + 1];
+                }
+            }
             /* index를 증가 시킵니다. */
             d++;
 
