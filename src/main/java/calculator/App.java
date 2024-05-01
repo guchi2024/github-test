@@ -1,6 +1,7 @@
 package calculator;
 
 import java.util.ArrayList;
+import java.util.Objects;
 import java.util.Scanner;
 
 public class App {
@@ -68,12 +69,22 @@ public class App {
             new ArrayList<Integer>();
             intList.add(result);
             System.out.println("가장 먼저 저장된 연산 결과를 삭제하시겠습니까? (remove 입력 시 삭제)");
-            // remove 값을 입력했을 때 index 0번째 값을 삭제
+            // remove 값을 입력했을 때 index 0번째(가장 먼저 저장된값) 값을 삭제
             str = sc.nextLine();
             if (str.equals("remove")) {
                 intList.remove(0);
             }
             /* 위 요구사항에 맞게 구현 */
+            System.out.println("저장된 연산결과를 조회하시겠습니까? (inquiry 입력 시 조회)");
+            /* 위 요구사항에 맞게 구현 */
+            //“inquiry”라는 문자열이 입력되면 저장된 연산 결과 전부를 출력합니다.
+            str = sc.nextLine();
+            for (Integer inquiry : intList) {
+                if (str.equals("inquiry")) {
+                    System.out.println(inquiry);
+                }
+            }
+
             System.out.println("더 계산하시겠습니까? (exit 입력 시 종료)");
             str = sc.nextLine();
         } while (!str.equals("exit"));
