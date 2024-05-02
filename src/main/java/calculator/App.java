@@ -1,7 +1,6 @@
 package calculator;
 
 import java.util.ArrayList;
-import java.util.Objects;
 import java.util.Scanner;
 
 public class App {
@@ -16,6 +15,7 @@ public class App {
         Scanner sc = new Scanner(System.in);
         String str = "";
 
+// do -while문 do를 실행하고 while을 진행
         do {
             System.out.print("첫 번째 숫자를 입력하세요: ");
             // Scanner를 사용하여 양의 정수를 입력받고 적합한 타입의 변수에 저장합니다.
@@ -37,14 +37,18 @@ public class App {
                 System.out.println(a);
             } else {
                 System.out.println("첫번째 숫자에 양수를 입력해주세요: ");
+                // 양수가 아닌 값을 입력받았을 때 처음부터 로직을 다시 실행할수 있게 해줌
+                continue;
             }
+
             // b값 양수
             if (b >= 0) {
                 System.out.println(b);
             } else {
                 System.out.println("두번째 숫자에 양수를 입력해주세요: ");
+                // 양수가 아닌 값을 입력받았을 때 처음부터 로직을 다시 실행할수 있게 해줌
+                continue;
             }
-
             int result = 0;
 
             /* 제어문을 활용하여 위 요구사항을 만족할 수 있게 구현합니다.*/
@@ -56,10 +60,10 @@ public class App {
             } else if (c == '*') {
                 result = (a * b);
             } else if (c == '/') {
-                if (b == 0) {
-                    System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
-                } else {
+                if (b != 0) {
                     result = (a / b);
+                } else {
+                    System.out.println("나눗셈 연산에서 분모(두번째 정수)에 0이 입력될 수 없습니다.");
                 }
             } else {
                 System.out.println(" 사칙 연산자가 아닙니다 ");
@@ -79,8 +83,8 @@ public class App {
             /* 위 요구사항에 맞게 구현 */
             //“inquiry”라는 문자열이 입력되면 저장된 연산 결과 전부를 출력합니다.
             str = sc.nextLine();
-            for (Integer inquiry : intList) {
-                if (str.equals("inquiry")) {
+            if (str.equals("inquiry")) {
+                for (Integer inquiry : intList) {
                     System.out.println(inquiry);
                 }
             }
